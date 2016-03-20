@@ -17,17 +17,13 @@
 </section>
 <section id="topics" class="topics">
   <h1>Topics</h1>
-  <a class="button" href="{{site.baseurl}}/topics/new">Add new</a>
+  <%= link_to "New", 
+      new_topic_path,
+      class: "button"
+  %>
   <p>Topics we want to be sensitive to as people create content:</p>
   <ul>
-    <li>A specific law, regulation, or member of Congress. <a href="{{site.baseurl}}/topics/new">Edit</a></li>
-    <li>A particular agency <a href="#">Edit</a></li>
-    <li>Research or best practices relevant to an 18F grouplet <a href="{{site.baseurl}}/topics/new">Edit</a></li>
-    <li>18F&rsquo;s relationships with vendors <a href="{{site.baseurl}}/topics/new">Edit</a></li>
-    <li>A previously unreleased website <a href="{{site.baseurl}}/topics/new">Edit</a></li>
-    <li>The Agile BPA <a href="{{site.baseurl}}/topics/new">Edit</a></li>
-    <li>An 18F project, product, or initiative (other than Agile BPA) <a href="{{site.baseurl}}/topics/new">Edit</a></li>
-    <li>Laws or regulations that govern GSA or federal employees <a href="{{site.baseurl}}/topics/new">Edit</a></li>  
+    <%= render @topics %>  
   </ul>  
 </section>
 <section id="stakeholders" class="stakeholders">

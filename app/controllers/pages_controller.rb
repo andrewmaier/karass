@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
   def settings
     @body_class = "layout-settings"
+    @topics = Topic.all
   end
     
 end

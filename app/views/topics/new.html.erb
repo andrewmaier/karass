@@ -1,0 +1,13 @@
+<%= link_to "Back to settings", {controller: "pages", action: "settings"}, :class => "a-back" %>
+
+<h1 class="page-title">New topic</h1>
+
+<%= form_for @topic, url: {action: "create"} do |f| %>
+  <div class="field">
+    <label>
+      <span class="label-text">Name</span>
+      <%= f.text_field :name %>
+    </label>
+  </div>
+  <button type="submit">Add topic</button> 
+<% end %>

@@ -1,0 +1,137 @@
+<form class="form-content-approval" action="{{site.baseurl}}/results/" method="get">
+  <section>
+    <p class="introduction">Working on a piece of content (or have an idea for one) and curious who needs to approve it for publication? Answer the following questions to help us point you in the right direction. If you still have questions, ask us in <a href="https://18f.slack.com/messages/g-content">g-content</a>.</p>
+  </section>
+  <section class="types">
+    <h1>What type of content are you creating?</h1>
+    <p>We rely on quite a few channels to get our message across. Scan the list below and check all that might apply to your content.</p>
+    <span class="instructions">I&rsquo;m creating&hellip; <span class="check-all-that-apply">(check all that apply)</span></span>
+    <fieldset class="fieldset-content-types fieldset-checkbox">
+      <legend>Content types</legend>
+      <div class="field field-checkbox">
+        <label for="content-type-internal-message">
+          <input name="content-type" id="content-type-internal-message" type="checkbox" value="internal-message">
+          <span class="label-text">
+            <span class="label-text-title">An internal message</span>
+            <span class="label-text-longdesc">Any message for widely distributed internal consumption, such as Slack messages (#news), internal emails, and all-hands announcements. Not published to the public.</span>
+          </span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-type-internal-documentation">
+          <input name="content-type" id="content-type-internal-documentation" type="checkbox" value="internal-documentation">
+          <span class="label-text">
+            <span class="label-text-title">Internal documentation about how we work</span>
+            <span class="label-text-longdesc">An article for internal consumption, shared with all new hires and used as reference by staff (also shared publicly whenever possible). Published at handbook.18f.gov.</span>
+          </span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-type-guide">
+          <input name="content-type" id="content-type-guide" type="checkbox" value="guide">
+          <span class="label-text">
+            <span class="label-text-title">A guide</span>
+            <span class="label-text-longdesc">A long-form (> 1,000 words), public collection of information in a simple, standard style. Published at pages.18f.gov/{{guide-name}} and linked from guides.18f.gov.</span>
+          </span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-type-blog-post">
+          <input name="content-type" id="content-type-blog-post" type="checkbox" value="blog-post">
+          <span class="label-text">
+            <span class="label-text-title">A blog post</span>
+            <span class="label-text-longdesc">A public article about how we work and what we&rsquo;re up to. Published at 18f.gsa.gov/blog.</span>
+          </span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-type-web-misc">
+          <input name="content-type" id="content-type-web-misc" type="checkbox" value="web-misc">
+          <span class="label-text">
+            <span class="label-text-title">I&rsquo;m not sure, but it&rsquo;ll be online!</span>
+            <span class="label-text-longdesc">18F occasionally publishes microsites outside of our standard guide format (pages.18f.gov/{{page-name}}). We&rsquo;ll work with you to publish content on any relevant subdomain.</span>
+          </span>
+        </label>
+      </div>
+    </fieldset>
+  </section>
+  <section class="topics">
+    <h1>What is your content <em>about?</em></h1>
+    <p>Your content may require additional forms of approval if it substantially mentions a particular person or topic. What do we mean by substantially? If, for instance, you say &ldquo;Our project uses the U.S. Web Design Standards, which were originally built by 18F and USDS&hellip;&rdquo; you won&rsquo;t have to get clearance from USDS before publishing your content.</p>
+    <span class="instructions">My content <em>substantially</em> mentions&hellip; <span class="check-all-that-apply">(check all that apply)</span></span>
+    <fieldset class="fieldset-checkbox fieldset-content-topics">
+      <legend>Topics</legend>
+      <div class="field field-checkbox">
+        <label for="content-topic-law-regulation-member-of-congress">
+          <input name="content-topic" id="content-topic-law-regulation-member-of-congress" type="checkbox" value="law-regulation-member-of-congress">
+          <span class="label-text">A specific law, regulation, or member of Congress.</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-agency">
+          <input name="content-topic" id="content-topic-agency" type="checkbox" value="agency">
+          <span class="label-text">A particular agency</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-grouplet">
+          <input name="content-topic" id="content-topic-grouplet" type="checkbox" value="grouplet">
+          <span class="label-text">Research or best practices relevant to an 18F grouplet</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-vendors">
+          <input name="content-topic" id="content-topic-vendors" type="checkbox" value="vendors">
+          <span class="label-text">18F&rsquo;s relationships with vendors</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-unreleased-website">
+          <input name="content-topic" id="content-topic-unreleased-website" type="checkbox" value="unreleased-website">
+          <span class="label-text">A previously unreleased website</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-agile-bpa">
+          <input name="content-topic" id="content-topic-agile-bpa" type="checkbox" value="agile-bpa">
+          <span class="label-text">The Agile BPA</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-project-product-initiative">
+          <input name="content-topic" id="content-topic-project-product-initiative" type="checkbox" value="project-product-initiative">
+          <span class="label-text">An 18F project, product, or initiative (other than Agile BPA)</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-topic-laws-regulations">
+          <input name="content-topic" id="content-topic-laws-regulations" type="checkbox" value="laws-regulations">
+          <span class="label-text">Laws or regulations that govern GSA or federal employees</span>
+        </label>
+      </div>
+    </fieldset>
+  </section>
+  <section>
+    <h1>Keeping up appearances</h1>
+    <p>While this finder works internally, our content is directly connected to stakeholders both internal <em>and</em> external. Help us out by preempting some potentially awkward conversations!</p>
+    <span class="instructions">My content might&hellip; <span class="check-all-that-apply">(check all that apply)</span></span>
+    <fieldset class="fieldset-external-stakeholders fieldset-checkbox">
+      <legend>External stakeholders</legend>
+      <div class="field field-checkbox">
+        <label for="content-external-stakeholders-press">
+          <input name="content-external-stakeholders" id="content-external-stakeholders-press" type="checkbox" value="press">
+          <span class="label-text">Generate interest from the press</span>
+        </label>
+      </div>
+      <div class="field field-checkbox">
+        <label for="content-external-stakeholders-federal-partners">
+          <input name="content-external-stakeholders" id="content-external-stakeholders-federal-partners" type="checkbox" value="federal-partners">
+          <span class="label-text">Be perceived as critical of federal agencies or federal contractors.</span>
+        </label>
+      </div>
+    </fieldset>
+  </section>
+  <footer>
+    <button type="submit">Submit</button>
+  </footer>
+</form>

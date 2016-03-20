@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+s1 = Stakeholder.create(name:'Andrew')
+t1 = Topic.create(name: '18F')
+ta1 = TopicAssociation.create(stakeholder: s1, topic: t1)

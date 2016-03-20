@@ -11,12 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320221855) do
+ActiveRecord::Schema.define(version: 20160320225835) do
 
   create_table "stakeholders", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "email"
+    t.string   "role"
   end
 
   create_table "topic_associations", force: :cascade do |t|
@@ -24,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160320221855) do
     t.integer  "topic_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "role"
   end
 
   create_table "topics", force: :cascade do |t|

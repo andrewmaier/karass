@@ -1,0 +1,20 @@
+= link_to "Back to settings", {controller: "pages", action: "settings"}, :class => "a-back"
+
+h1.page-title Edit Topic
+
+= form_for @topic, url: {action: "update"} do |f|
+  .field
+    = f.label :name do
+      span.label-text Name
+      = f.text_field :name
+  /section.stakeholders
+  /  h1 Associated stakeholders
+  /  ul
+  /    li Dave Zvenyach <abbr class="badge" title="Approver">A</abbr></li>
+  /   </ul>
+  / </section>
+  footer  
+    button type="submit" Edit topic
+    = link_to "Delete topic", @topic, method: :delete,
+                                   class: "button button--delete",
+                                   data: { confirm: 'Are you sure?' }

@@ -1,0 +1,65 @@
+h1.page-title Settings
+/ section#types.types
+/   h1 Types
+/   p=="Please contact #{link_to "g-content", "https://18f.slack.com/messages/g-content"} if you&rsquo;d like to edit #{link_to "this list", "https://docs.google.com/spreadsheets/d/159fzF2Uf7DM_hJzoTOTwz66z9CK2qOOxBiDRBttIues/edit#gid=0"}."
+/   dl
+/     dt Internal message
+/     dd Any message for widely distributed internal consumption, such as Slack messages (#news), internal emails, and all-hands announcements. Not published to the public.
+/     dt Internal documentation about how we work
+/     dd An article for internal consumption, shared with all new hires and used as reference by staff (also shared publicly whenever possible). Published at handbook.18f.gov.
+/     dt Guide
+/     dd A long-form (> 1,000 words), public collection of information in a simple, standard style. Published at pages.18f.gov/ and linked from guides.18f.gov.
+/     dt Blog posts
+/     dd A public article about how we work and what we’re up to. Published at 18f.gsa.gov/blog.
+/     dt Misc. web content
+/     dd 18F occasionally publishes microsites outside of our standard guide format (pages.18f.gov/). We&rsquo;ll work with you to publish content on any relevant subdomain.
+
+section#topics.topics
+  h1 Topics
+  = link_to "New",  new_topic_path, class: "button"
+  p Topics we want to be sensitive to as people create content:
+  - unless @topics.blank?
+    ul
+      = render @topics
+  - else 
+    .blank-slate 
+      p=="No topics exist! Click the button above to add your first."
+
+section#stakeholders.stakeholders
+  h1 Stakeholders
+  = link_to "New",  new_stakeholder_path, class: "button"
+  - unless @stakeholders.blank?
+    ul
+      = render @stakeholders
+  - else 
+    .blank-slate 
+      p=="No stakeholders exist! Click the button above to add your first."
+
+section#associations.associations
+  h1 Associations
+  - if @stakeholders.blank? || @topics.blank?
+    .blank-slate 
+      p=="Karass is designed to track associations between content topics and stakeholders. In order to do this, you&rsquo;ll need to have at least one topic and at least one stakeholder. Refer to the sections above."
+  - else
+    form action=""
+      =="Create a new association for"
+      .field.field-select
+        label
+          span.label-text Stakeholder
+          select
+            option Stakeholder 1
+            option Stakeholder 2
+      footer
+        button Add
+
+      / - if @stakeholders_with_associations.blank
+      / - @stakeholders_with_associations.each do |stakeholder| 
+      /   article.association
+      /     h1 = stakeholder.name
+      /     - unless stakeholder.topic_associations.blank? 
+      /       .association--topics
+      /         h2 Topics
+      /         ul
+      /           - stakeholder.topic_associations.each do |topic|
+      /             = topic.name
+      /             abbr= topic.role

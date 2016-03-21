@@ -1,0 +1,22 @@
+= link_to "Back to settings", {controller: "pages", action: "settings"}, :class => "a-back"
+
+h1.page-title Edit stakeholder
+
+= form_for @stakeholder, url: {action: "update"} do |f|
+  .field
+    = f.label :name do
+      span.label-text Name
+      = f.text_field :name
+  .field
+    = f.label :email do
+      span.label-text Name
+      = f.text_field :email
+  .field
+    = f.label :role do
+      span.label-text Name
+      = f.text_field :role
+  footer  
+    button type="submit" Edit stakeholder
+    = link_to "Delete stakeholder", @stakeholder, method: :delete,
+                                     class: "button button--delete",
+                                     data: { confirm: 'Are you sure?' }

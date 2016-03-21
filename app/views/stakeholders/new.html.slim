@@ -1,0 +1,19 @@
+= link_to "Back to settings", {controller: "pages", action: "settings"}, :class => "a-back"
+
+h1.page-title New stakeholder
+
+= form_for @stakeholder, url: {action: "create"} do |f|
+  .field
+    = f.label :name do
+      span.label-text Name
+      = f.text_field :name
+  .field
+    = f.label :email do
+      span.label-text Email
+      = f.text_field :email
+  .field
+    = f.label :role do
+      span.label-text Role
+      = f.text_field :role
+  footer  
+    button type="submit" Create stakeholder

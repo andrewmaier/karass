@@ -1,4 +1,4 @@
-class AddEmailAndRoleToStakeholder < ActiveRecord::Migration
+class AddEmailAndRoleToStakeholders < ActiveRecord::Migration
   def change
     add_column :stakeholders, :email, :string
     add_column :stakeholders, :role, :string

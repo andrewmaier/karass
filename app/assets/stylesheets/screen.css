@@ -1,6 +1,9 @@
+/* @override http://localhost:3000/assets/screen.self-2b8c8501073bc43cb59727ff35d7a2f05ca2e08ceb9667eedd3e791092eb411a.css?body=1 */
+
 /* @override http://localhost:4000/stylesheets/screen.css */
 
 /* @group bootstrap */
+
 
 body{
 	font-family: "Roboto", helvetica neue, helvetica, sans-serif;
@@ -729,6 +732,13 @@ figure img{
 
 /* @group layout-settings */
 
+
+
+.layout-settings main form{ 
+	padding-bottom: 0; 
+	
+}
+
 .layout-settings nav{
 	margin-bottom: 1em;
 }
@@ -801,7 +811,7 @@ figure img{
 
 .layout-settings section p{
 	font-family: pt serif;
-	font-size: 17px;
+	font-size: 18px;
 }
 
 .layout-settings .blank-slate{
@@ -817,10 +827,18 @@ figure img{
 
 .layout-settings .blank-slate p:last-child{ margin-bottom: 0;}
 
+.layout-settings .associations form { margin-bottom: 32px; }
+
 .layout-settings .associations .field,
 .layout-settings .associations footer{
 	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
 	margin-left: 0.2em;
+}
+
+.layout-settings .associations .field.field-select{
+  margin-left: 0.4em;
 }
 
 .layout-settings .associations .field.field-select::after{
@@ -831,6 +849,63 @@ figure img{
 .layout-settings .associations .field span.label-text{
 	position: absolute;
 	left: -9999em;
+}
+
+.layout-settings .associations .association{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  max-width: 28em;
+}
+
+.layout-settings .associations .association ul li:last-of-type{
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.layout-settings .associations .association::after{
+  content: "";
+  display: table;
+  clear: both;
+  background: red;
+}
+
+.layout-settings .associations .association h1,
+.layout-settings .associations .association h2{
+  font: inherit;
+  color: inherit;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.layout-settings .associations .association h1{
+  display: block; 
+  font-weight: 400;
+}
+
+.layout-settings .associations .association h2,
+.layout-settings .associations .association li{	font-size: 14px; }
+
+.layout-settings .associations .association h2{
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.layout-settings .associations .association li{
+	margin-bottom: 0;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	border-bottom: 1px solid #eee; 
+	padding-right: 40px;
+	position: relative;
+}
+
+.layout-settings .associations .association li abbr{
+	position: absolute;
+	right: 0;
+	top: 7px;
 }
 
 abbr.badge{
@@ -848,6 +923,7 @@ abbr.badge{
 	font-size: 11px;
 	font-family: Verdana;
 	margin-right: 0.2em;
+	margin-left: 0.4em;
 }
 
 abbr.badge.badge--collaborator{

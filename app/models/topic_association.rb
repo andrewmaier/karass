@@ -1,4 +1,7 @@
 class TopicAssociation < ActiveRecord::Base
+  belongs_to :stakeholder
+  belongs_to :topic
+
   # constants
   ROLES = {
     :collaborator => 0,
@@ -9,6 +12,4 @@ class TopicAssociation < ActiveRecord::Base
     define_method("#{meth}?") { type == index }
   end
 
-  belongs_to :stakeholder
-  belongs_to :topic
 end

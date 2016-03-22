@@ -9,6 +9,7 @@ class PagesController < ApplicationController
     @body_class = "layout-settings"
     # @types = Type.all
     @topics = Topic.all
+    @topic_association = TopicAssociation.new
     @stakeholders = Stakeholder.all
   end
   def results

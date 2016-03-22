@@ -1,0 +1,16 @@
+= link_to "Back to settings", {controller: "pages", action: "settings"}, :class => "a-back"
+
+h1.page-title= "New association for #{@stakeholder.name}"
+
+= form_for @topic_association, url: {action: "create"} do |f|
+  = f.hidden_field :stakeholder_id, :value => @stakeholder.id
+  .field.field-select
+    label
+      span.label-text= "What topic should be associated with #{@stakeholder.name}?"
+      = f.collection_select(:topic_id, @topics, :id, :name)
+  .field.field-select
+    label
+      span.label-text= "What role will #{@stakeholder.name} play in relation to the content being created?"
+      = f.select :role, options_for_select([['Collaborator', 0], ['Approver', 1]])
+  footer  
+    button type="submit" Create association

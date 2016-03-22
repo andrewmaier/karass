@@ -39,18 +39,32 @@ section#associations.associations
   h1 Associations
   - if @stakeholders.blank? || @topics.blank?
     .blank-slate 
-      p=="Karass is designed to track associations between content topics and stakeholders. In order to do this, you&rsquo;ll need to have at least one topic and at least one stakeholder. Refer to the sections above."
+      p=="Karass tracks associations between topics and stakeholders. In order to do this, you&rsquo;ll need to have at least one topic and at least one stakeholder. Refer to the sections above."
   - else
-    form action=""
+    = form_for @topic_association, url: new_topic_association_path do |f|
       =="Create a new association for"
       .field.field-select
         label
           span.label-text Stakeholder
-          select
-            option Stakeholder 1
-            option Stakeholder 2
+          = f.collection_select(:stakeholder_id, @stakeholders, :id, :name)
       footer
         button Add
+
+    - @stakeholders.each do |stakeholder| 
+      - unless stakeholder.topic_associations.blank?
+        article.association
+          h1= stakeholder.name
+          h2 Topics
+          ul
+            - stakeholder.topic_associations.each do |topic_association|
+              li
+                = Topic.find(topic_association.topic_id).name
+                - if topic_association.role == 0 
+                  abbr.badge.badge--collaborator title="Collaborator" C
+                - else 
+                  abbr.badge.badge--collaborator title="Approver" A
+
+
 
       / - if @stakeholders_with_associations.blank
       / - @stakeholders_with_associations.each do |stakeholder| 

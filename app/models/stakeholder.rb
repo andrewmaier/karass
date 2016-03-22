@@ -1,3 +1,4 @@
 class Stakeholder < ActiveRecord::Base
-  has_many :topics, through: :topic_association
+  has_many :topic_associations
+  has_many :topics, through: :topic_associations
 end
